@@ -18,6 +18,10 @@
   font-weight: bold;
   text-shadow: 2px -3px 5px rgb(234, 255, 0);
 }
+.cardStyle:hover{
+transform: scale(1.2);
+z-index: 2;
+}
 .data{
   font-weight: bold;
 }

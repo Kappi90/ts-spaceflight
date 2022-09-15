@@ -9,7 +9,14 @@ interface SingleArticleProps {
 const Article = ({ article }: SingleArticleProps) => {
   return (
     <Col xs={12} md={6} lg={4}>
-      <Card className='mb-4' style={{ width: "18rem", height: "24rem" }}>
+      <Card
+        className='mb-4 cardStyle'
+        style={{
+          width: "18rem",
+          height: "24rem",
+          boxShadow: "4px 4px 18px 0px rgba(255,255,255,0.75)",
+        }}
+      >
         <Link to={"/details/" + article.id}>
           <Card.Img
             style={{ height: "16rem" }}

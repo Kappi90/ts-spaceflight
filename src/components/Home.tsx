@@ -29,7 +29,7 @@ const Home = () => {
 
   return (
     <Container className='justify-content-center p-4'>
-      <h1>Articles</h1>
+      <h1 className='mb-4'>Articles</h1>
       <Row>
         {articles.map((article, i) => (
           <Article key={i} article={article} />

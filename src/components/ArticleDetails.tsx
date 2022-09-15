@@ -49,10 +49,15 @@ const ArticleDetails = () => {
 
   return (
     <Container className='text-center text-dark'>
-      <h1 className='text-white'>Article Details</h1>
+      <h1 className='text-white mb-4'>Article Details</h1>
       {article ? (
         <Row className='justify-content-center'>
-          <Card style={{ width: "18rem" }}>
+          <Card
+            style={{
+              width: "18rem",
+              boxShadow: "8px 8px 18px 0px rgba(255,255,255,0.75)",
+            }}
+          >
             <Card.Img variant='top' src={article.imageUrl} />
             <Card.Body>
               <Card.Title>{article.title}</Card.Title>
