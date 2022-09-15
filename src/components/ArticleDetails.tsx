@@ -62,7 +62,8 @@ const ArticleDetails = () => {
             </Card.Body>
             <ListGroup className='list-group-flush'>
               <ListGroupItem>
-                <p>Released on:</p> {myTime(article.publishedAt)}
+                <p className='data'>Released on:</p>{" "}
+                {myTime(article.publishedAt)}
               </ListGroupItem>
             </ListGroup>
             <Card.Body>

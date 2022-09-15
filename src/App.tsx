@@ -10,12 +10,10 @@ function App() {
     <BrowserRouter>
       <MyNavbar />
       <div className='App'>
-        <header className='App-header'>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/details/:id' element={<ArticleDetails />} />
-          </Routes>
-        </header>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/details/:id' element={<ArticleDetails />} />
+        </Routes>
       </div>
     </BrowserRouter>
   );

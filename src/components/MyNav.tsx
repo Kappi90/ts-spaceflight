@@ -4,14 +4,17 @@ import { Link } from "react-router-dom";
 const MyNavbar = () => {
   return (
     <Navbar
-      className='justify-content-center'
+      className='justify-content-center myNav'
       collapseOnSelect
       expand='md'
-      bg='dark'
-      variant='dark'
     >
       <Link to='/'>
-        <Navbar.Brand className='text-center'>Spaceflight</Navbar.Brand>
+        <Navbar.Brand
+          style={{ fontSize: "3vh" }}
+          className='text-center navBrand'
+        >
+          SPACEFLIGHT
+        </Navbar.Brand>
       </Link>
     </Navbar>
   );
