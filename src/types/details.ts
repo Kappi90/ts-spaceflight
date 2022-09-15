@@ -2,7 +2,8 @@ export interface Details {
   id: number;
   title: string;
   url: string;
-  imageURL: string;
+  imageUrl: string;
   newsSite: string;
   summary: string;
+  publishedAt: string;
 }

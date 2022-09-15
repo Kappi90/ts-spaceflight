@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
-import { Alert, Container, Row } from "react-bootstrap";
+import {
+  Alert,
+  Card,
+  Container,
+  ListGroup,
+  ListGroupItem,
+  Row,
+} from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { Details } from "../types/details";
 
@@ -7,10 +14,11 @@ const ArticleDetails = () => {
   const params = useParams();
   console.log("params", params);
 
-  const [article, setArticle] = useState<Details[]>([]);
+  const [article, setArticle] = useState<Details | null>(null);
 
   useEffect(() => {
     fetchArticle();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchArticle = async () => {
@@ -31,11 +39,33 @@ const ArticleDetails = () => {
   };
 
   return (
-    <Container className='text-center'>
-      <h1>Article Details</h1>
-      {/* <Row className='justify-content-center'>
-        {article ? <h2>...</h2> : <Alert variant='danger'>ERROR</Alert>}
-      </Row>*/}
+    <Container className='text-center text-dark'>
+      <h1 className='text-white'>Article Details</h1>
+      {article ? (
+        <Row className='justify-content-center'>
+          <Card style={{ width: "18rem" }}>
+            <Card.Img variant='top' src={article.imageUrl} />
+            <Card.Body>
+              <Card.Title>{article.title}</Card.Title>
+              <Card.Text style={{ fontSize: "1rem" }}>
+                {article.summary}
+              </Card.Text>
+            </Card.Body>
+            <ListGroup className='list-group-flush'>
+              <ListGroupItem>
+                Published the: {article.publishedAt}
+              </ListGroupItem>
+            </ListGroup>
+            <Card.Body>
+              <Card.Link href={article.url} target='_blank'>
+                Read the article
+              </Card.Link>
+            </Card.Body>
+          </Card>
+        </Row>
+      ) : (
+        <Alert>ERRORE</Alert>
+      )}
     </Container>
   );
 };
