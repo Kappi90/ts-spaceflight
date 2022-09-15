@@ -38,6 +38,15 @@ const ArticleDetails = () => {
     }
   };
 
+  const myTime = (string: string): string => {
+    let date = new Date(string);
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  };
+
   return (
     <Container className='text-center text-dark'>
       <h1 className='text-white'>Article Details</h1>
@@ -53,7 +62,7 @@ const ArticleDetails = () => {
             </Card.Body>
             <ListGroup className='list-group-flush'>
               <ListGroupItem>
-                Published the: {article.publishedAt}
+                <p>Released on:</p> {myTime(article.publishedAt)}
               </ListGroupItem>
             </ListGroup>
             <Card.Body>
